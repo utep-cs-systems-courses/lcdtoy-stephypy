@@ -37,6 +37,30 @@ void fillRectangle(u_char colMin, u_char rowMin, u_char width, u_char height,
   }
 }
 
+void fillTriangle(u_char colMin, u_char rowMin, double width, double height, 
+		   u_int colorBGR)
+{
+  u_char i;
+
+  // For ROW (vertical, up-down)
+  for(i = 0; i <= height; i++) {
+    // Draw a vertical line
+    drawPixel(colMin, rowMin + i, colorBGR);
+    if(height >= width) {
+      drawPixel(colMin + i, (rowMin + height)-(width/height) * i, colorBGR);
+    }
+  }
+  //HERE HERE 
+  for(i = 0; i <= width; i++) {
+    //Draw a horizontal line
+    drawPixel(colMin + i, rowMin, colorBGR);
+    if(width >= height) {
+      drawPixel((colMin + width)-(height/width) * i, rowMin + i, colorBGR);
+    }
+  }
+  
+}
+
 /** Clear screen (fill with color)
  *  
  *  \param colorBGR The color to fill screen
