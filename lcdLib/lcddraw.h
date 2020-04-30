@@ -23,7 +23,10 @@ void drawPixel(u_char col, u_char row, u_int colorBGR);
  */
 void fillRectangle(u_char colMin, u_char rowMin, u_char width, u_char height, u_int colorBGR);
 
-void fillTriangle(u_char colMin, u_char rowMin, double width, double height, u_int colorBGR);
+void drawRightTriangle(u_char colMin, u_char rowMin, double width, double height, u_int colorBGR);
+
+void drawIsoTriangle(u_char colMin, u_char rowMin, double width, double height, u_int colorBGR);
+
 
 /** Clear screen (fill with color)
  *  

@@ -37,7 +37,7 @@ void fillRectangle(u_char colMin, u_char rowMin, u_char width, u_char height,
   }
 }
 
-void fillTriangle(u_char colMin, u_char rowMin, double width, double height, 
+void drawRightTriangle(u_char colMin, u_char rowMin, double width, double height, 
 		   u_int colorBGR)
 {
   u_char i;
@@ -56,6 +56,30 @@ void fillTriangle(u_char colMin, u_char rowMin, double width, double height,
     drawPixel(colMin + i, rowMin, colorBGR);
     if(width >= height) {
       drawPixel((colMin + width)-(height/width) * i, rowMin + i, colorBGR);
+    }
+  }
+  
+}
+
+void drawIsoTriangle(u_char colMin, u_char rowMin, double width, double height, u_int colorBGR) {
+  u_char i = 0;
+
+  //Draw horizontal line
+  for(i = 0; i <= width; i++) {
+    drawPixel(colMin + i, rowMin + height, colorBGR);
+    if(width > height) {
+      drawPixel((colMin + width/2) - i/2, rowMin + i * height/width, colorBGR);
+      drawPixel((colMin + width/2) + i/2, rowMin + i * height/width, colorBGR);
+    }
+  }
+
+  //Draw Diagonals
+  for(i = 0; i < height; i++) {
+    if(height >= width) {
+    // Draw left diagonal
+      drawPixel((colMin + width/2) - (width/height/2) * i, rowMin + i, colorBGR);
+    // Draw right diagonal 
+    drawPixel((colMin + width/2) + (width/height/2) * i, rowMin + i, colorBGR);
     }
   }
   
