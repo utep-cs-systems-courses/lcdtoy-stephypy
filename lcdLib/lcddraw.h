@@ -27,6 +27,7 @@ void drawRightTriangle(u_char colMin, u_char rowMin, double width, double height
 
 void drawIsoTriangle(u_char colMin, u_char rowMin, double width, double height, u_int colorBGR);
 
+void drawDownTriangle(u_char colMin, u_char rowMin, double side, u_int colorBGR);
 
 /** Clear screen (fill with color)
  *  

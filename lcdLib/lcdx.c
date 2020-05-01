@@ -45,4 +45,10 @@ int main() {
   // Mouth
   drawIsoTriangle(59, 120, 12, 12, COLOR_BLACK);
 
+  u_char x = 25;
+  u_char y = 25;
+  u_char a = 40;
+
+  drawDownTriangle(x, y, a, COLOR_BLUE);
+  // drawDownTriangle(x+5, y-1, a-10, COLOR_HOT_PINK);
 }
