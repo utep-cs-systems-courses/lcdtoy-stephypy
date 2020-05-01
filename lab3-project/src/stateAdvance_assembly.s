@@ -23,16 +23,17 @@ state_advance:
 
 	;; Switch Statements
 case01:
-	call #song_advance 	; State 1: Song (found in song.c)
+	call #light_green 	; State 1: Song (found in song.c)
+	call #led_update
 	jmp end
 
 case02:
-	call #dim_red 		; State 2: Dim Red Light (found in stateMachines.c)
+	call #light_red 		; State 2: Dim Red Light (found in stateMachines.c)
 	call #led_update
 	jmp end
 
 case03:
-	call #red_plus_green 	; State 3: Red, Green, Both (found in stateMachines.c)
+	call #light_both 	; State 3: Red, Green, Both (found in stateMachines.c)
 	call #led_update
 	jmp end
 
