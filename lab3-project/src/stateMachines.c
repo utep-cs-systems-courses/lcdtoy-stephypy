@@ -3,15 +3,19 @@
 #include "song.h"
 #include "switches.h"
 #include "cat.h"
+#include "lcdutils.h"
 
-extern char catState2 = 0;
-extern char catState3 = 0;
-extern char catState4 = 0;
+char catState2 = 0;
+char catState3 = 0;
+char catState4 = 0;
 
 /* Advance between states */
 void stateAdvance() {
   switch(state) {
   case 1:
+    if(curr_verse == 0) {
+      clearScreen(COLOR_SEA_BASS);
+    }
     play_fallen_down(); // Found in song.c
     break;
     

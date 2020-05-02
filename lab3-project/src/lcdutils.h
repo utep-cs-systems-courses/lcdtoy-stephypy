@@ -83,7 +83,7 @@ void lcd_writeColor(u_int colorBGR);
 #define COLOR_AQUAMARINE	0xd7ef
 #define COLOR_DARK_GREEN	0x0320
 #define COLOR_DARK_OLIVE_GREEN	0x2b4a
-#define COLOR_SEA_GREEN		0x5445
+#define COLOR_SEA_BASS		0x5445
 #define COLOR_SPRING_GREEN	0x7fe0
 #define COLOR_PALE_GREEN	0x9fd3
 #define COLOR_GREEN_YELLOW	0x2ff5
