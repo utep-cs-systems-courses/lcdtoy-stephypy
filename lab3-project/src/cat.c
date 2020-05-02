@@ -1,9 +1,12 @@
 #include "lcdutils.h"
 #include "lcddraw.h"
+#include "stateMachines.h"
 
 /* State 2 Cat */
 /* Displays a cross eyed brown cat */
 void cat_two() {
+  catState2 = 1;
+  
   clearScreen(COLOR_SIENNA);
 
   drawString5x7(20,40, "MEOW meowww", COLOR_GOLD, COLOR_SIENNA);
@@ -38,6 +41,8 @@ void cat_two() {
 
 /* State 3 Cat */
 void cat_three() {
+  catState3 = 1;
+  
   clearScreen(COLOR_HOT_PINK);
 
   drawString5x7(20,40, "intense meoww", COLOR_FIREBRICK, COLOR_HOT_PINK);
@@ -67,6 +72,8 @@ void cat_three() {
 
 /* State 4 Cat */
 void cat_four() {
+  catState4 = 1;
+
   clearScreen(COLOR_DARK_OLIVE_GREEN);
 
   drawString5x7(20,10, "M E O W m e o w", COLOR_SKY_BLUE, COLOR_DARK_OLIVE_GREEN);

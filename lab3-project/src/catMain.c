@@ -20,8 +20,8 @@ void main(void)
   buzzer_init(); 
 
   // Screen
-  drawString5x7(60,40, "Hewwo :3", COLOR_NAVY, COLOR_FIREBRICK);
   clearScreen(COLOR_FIREBRICK);
+  drawString5x7(20,40, "Hewwo :3", COLOR_NAVY, COLOR_FIREBRICK);
   
   enableWDTInterrupts(); // handling interruptions
 

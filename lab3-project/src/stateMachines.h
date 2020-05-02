@@ -6,4 +6,8 @@ void stateAdvance();
 
 extern char state;
 
+extern char catState2;
+extern char catState3;
+extern char catState4;
+
 #endif // included

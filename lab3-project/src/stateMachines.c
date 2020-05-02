@@ -4,6 +4,10 @@
 #include "switches.h"
 #include "cat.h"
 
+extern char catState2 = 0;
+extern char catState3 = 0;
+extern char catState4 = 0;
+
 /* Advance between states */
 void stateAdvance() {
   switch(state) {
@@ -15,24 +19,42 @@ void stateAdvance() {
     //Restart values for state 1
     curr_verse = 0;
     buzzer_set_period(0);
+
+    // Restarting cat values
+    catState3 = 0;
+    catState4 = 0;
     
-    cat_two(); // Found in cat.c
+    if(catState2 == 0) {
+     cat_two(); // Found in cat.c
+    }
     break;
     
   case 3:
     //Restart values for state 1
     curr_verse = 0;
     buzzer_set_period(0);
+
+    // Restarting cat values
+    catState2 = 0;
+    catState4 = 0;
     
-    cat_three(); // Found in cat.c
+    if(catState3 == 0) {
+      cat_three(); // Found in cat.c
+    }
     break;
 
   case 4:
     //Restart values for state 1
     curr_verse = 0;
     buzzer_set_period(0);
+
+    // Restarting cat values
+    catState2 = 0;
+    catState3 = 0;
     
-    cat_four(); // Found in cat.c
+    if(catState4 == 0) {
+      cat_four(); // Found in cat.c
+    }
     break;
 
   default:
