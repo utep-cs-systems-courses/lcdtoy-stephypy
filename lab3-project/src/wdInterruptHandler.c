@@ -1,6 +1,5 @@
 #include <msp430.h>
-#include "song.h"
-#include "stateAdvance_assembly.h"
+#include "stateMachines.h"
 
 void
 __interrupt_vec(WDT_VECTOR) WDT() {	/* 250 interrupts/sec */
@@ -8,7 +7,7 @@ __interrupt_vec(WDT_VECTOR) WDT() {	/* 250 interrupts/sec */
   char beat = 68; // Represents the needed interrupts for an eighth note
   
   if(++blink_count == beat) {
-    state_advance();
+    stateAdvance();
     blink_count = 0;
   }
 }

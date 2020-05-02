@@ -1,6 +1,5 @@
 #include <msp430.h>
 #include "libTimer.h"
-#include "led.h"
 #include "switches.h"
 #include "buzzer.h"
 
@@ -13,9 +12,9 @@ void main(void)
   // Switch Setup
   switch_init();
 
-  // LED Setup
-  led_init();
-
+  // Graphic Display Setup
+  lcd_init();
+  
   // Buzzer Setup
   buzzer_init(); 
 

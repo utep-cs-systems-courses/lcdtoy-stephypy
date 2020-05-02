@@ -10,7 +10,7 @@ int main() {
   configureClocks();
   lcd_init();
 
-  u_char width = screenWidth, height = screenHeight;
+  // u_char width = screenWidth, height = screenHeight;
 
   clearScreen(COLOR_SIENNA);
 

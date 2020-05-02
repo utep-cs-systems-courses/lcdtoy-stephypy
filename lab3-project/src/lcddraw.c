@@ -37,89 +37,57 @@ void fillRectangle(u_char colMin, u_char rowMin, u_char width, u_char height,
   }
 }
 
-void drawRightTriangle(u_char colMin, u_char rowMin, double width, double height, 
-		   u_int colorBGR)
-{
-  u_char i;
-
-  // For ROW (vertical, up-down)
-  for(i = 0; i <= height; i++) {
-    // Draw a vertical line
-    drawPixel(colMin, rowMin + i, colorBGR);
-    if(height >= width) {
-      drawPixel(colMin + i, (rowMin + height)-(width/height) * i, colorBGR);
-    }
-  }
-  //HERE HERE 
-  for(i = 0; i <= width; i++) {
-    //Draw a horizontal line
-    drawPixel(colMin + i, rowMin, colorBGR);
-    if(width >= height) {
-      drawPixel((colMin + width)-(height/width) * i, rowMin + i, colorBGR);
-    }
-  }
-  
-}
+/** Draw and fill Iso Triangle
+ *
+ *  \param colMin Column start
+ *  \param rowMin Row start
+ *  \param width Width of triangle
+ *  \param height height of triangle
+ *  \param colorBGR Color of triangle in BGR
+ **/
 
 void drawIsoTriangle(u_char colMin, u_char rowMin, double width, double height, u_int colorBGR) {
   u_char i;
-  double slopeHeight = width/height; // slope when height is bigger or equal to width
-  double slopeWidth = height/width; // slope when width is bigger than height
+  double slope = width/height; 
   double middle = width/2;
 
   u_char j;
 
   for(i = 0; i <= height; i++) {
-    for(j = colMin + middle - slopeHeight/2 * i; j <= colMin + middle + slopeHeight/2 * i; j++) {
+    for(j = colMin + middle - slope/2 * i; j <= colMin + middle + slope/2 * i; j++) {
       drawPixel(j, i + rowMin, colorBGR);
     }
   }
 }
-  
-  /*
-  //Draw horizontal line
-  for(i = 0; i <= width; i++) {
-    drawPixel(colMin + i, rowMin + height, colorBGR);
-    if(width > height) {
-      drawPixel((colMin + middle) - i/2, rowMin + i * height/width, colorBGR);
-      drawPixel((colMin + middle) + i/2, rowMin + i * height/width, colorBGR);
-    }
-  }
 
-  //Draw Diagonals
-  for(i = 0; i < height; i++) {
-    if(height >= width) {
-    // Draw left diagonal
-      drawPixel((colMin + width/2) - (width/height/2) * i, rowMin + i, colorBGR);
-    // Draw right diagonal 
-    drawPixel((colMin + width/2) + (width/height/2) * i, rowMin + i, colorBGR);
-    }
-  }
-  */
+/** Draw and fill Upside Down Triangle
+ *
+ *  \param colMin Column start
+ *  \param rowMin Row start
+ *  \param side length of triangle side
+ *  \param colorBGR Color of triangle in BGR
+ **/
 
 void drawDownTriangle(u_char colMin, u_char rowMin, double side, u_int colorBGR) {
   u_char i;
   u_char j;
   
   for(i = 0; i <= side; i++) {
+    // Draw horizontal line 
     drawPixel(colMin + i, rowMin, colorBGR);
+    // Go to the next row
     if(i == side) {
       i = 0;
       colMin++;
-      side = side - 2;
       rowMin++;
+      side -= 2;
     }
+    // Tip of triangle
     if(side < 2) {
       break;
     }
   }
 }
-  /*
-  for(i = 0; i <= side/2; i++) {
-    drawPixel(colMin + i, rowMin + i, colorBGR);
-    drawPixel(colMin + side - i, rowMin + i, colorBGR);
-  }
-  */
 
 /** Clear screen (fill with color)
  *  

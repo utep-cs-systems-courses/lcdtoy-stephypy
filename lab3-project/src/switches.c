@@ -1,12 +1,9 @@
 #include <msp430.h>
 #include "switches.h"
-#include "led.h"
-#include "stateAdvance_assembly.h"
 #include "song.h"
 
 int state = 0;
 char sw1_state_down, sw2_state_down, sw3_state_down, sw4_state_down;
-char switch_state_changed; /* effectively boolean */
 
 static char 
 switch_update_interrupt_sense()
@@ -26,7 +23,6 @@ switch_init()			/* setup switch */
   P2OUT |= SWITCHES;		/* pull-ups for switches */
   P2DIR &= ~SWITCHES;		/* set switches' bits for input */
   switch_update_interrupt_sense();
-  led_update();
 }
 
 void
@@ -61,6 +57,4 @@ switch_interrupt_handler()
    if(sw4_state_down) {          /* SW4 = Red to Green Toggle Lights */
      state = 4;                  // Define state number
    }
-
-   switch_state_changed = 1;   // Acknowledges change in state
 }

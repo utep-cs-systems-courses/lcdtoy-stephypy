@@ -1,6 +1,4 @@
-#include <msp430.h>
 #include "buzzer.h"
-
 
 /* notes for the song */
 #define F  2702.74 // F#4
@@ -14,15 +12,11 @@
 #define E5 6067.4 
 #define G5 5102.04 
 
-
 extern int curr_verse; // Index of the current note
 extern char curr_state_one; // Allows the change of cases
 
-/* State 4 */
-void song_advance();
-
-/* Plays Song */
+/* State 1: Plays Song */
 void play_fallen_down();
 
-/* Warning Tone */
-void warning();
+/* Welcome Tone */
+void welcome();

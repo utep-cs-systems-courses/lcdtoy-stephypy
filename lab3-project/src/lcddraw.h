@@ -23,10 +23,23 @@ void drawPixel(u_char col, u_char row, u_int colorBGR);
  */
 void fillRectangle(u_char colMin, u_char rowMin, u_char width, u_char height, u_int colorBGR);
 
-void drawRightTriangle(u_char colMin, u_char rowMin, double width, double height, u_int colorBGR);
-
+/** Draw and fill Iso Triangle
+ *
+ *  \param colMin Column start
+ *  \param rowMin Row start
+ *  \param width Width of triangle
+ *  \param height height of triangle
+ *  \param colorBGR Color of triangle in BGR
+ **/
 void drawIsoTriangle(u_char colMin, u_char rowMin, double width, double height, u_int colorBGR);
 
+/** Draw and fill Upside Down Triangle
+ *
+ *  \param colMin Column start
+ *  \param rowMin Row start
+ *  \param side length of triangle side
+ *  \param colorBGR Color of triangle in BGR
+ **/
 void drawDownTriangle(u_char colMin, u_char rowMin, double side, u_int colorBGR);
 
 /** Clear screen (fill with color)
