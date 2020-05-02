@@ -44,17 +44,17 @@ switch_interrupt_handler()
    }
 
    // STATE 2
-   if(sw2_state_down) {          /* SW2 = Dim Red */
+   if(sw2_state_down) {          /* SW2 = Cat Two */
      state = 2;                  // Define state number
    }
 
    // STATE 3
-   if(sw3_state_down) {          /* SW3 = Red Plus Green Toggle Lights */
+   if(sw3_state_down) {          /* SW3 = Cat Three */
      state = 3;                  // Define state number
    }
 
    /// STATE 4
-   if(sw4_state_down) {          /* SW4 = Red to Green Toggle Lights */
+   if(sw4_state_down) {          /* SW4 = Cat Four */
      state = 4;                  // Define state number
    }
 }
