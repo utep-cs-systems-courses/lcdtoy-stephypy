@@ -5,6 +5,7 @@
 /* State 2 Cat */
 /* Displays a cross eyed brown cat */
 void cat_two() {
+  catState2 = 1;
   
   clearScreen(COLOR_SIENNA);
 
@@ -44,7 +45,7 @@ void cat_three() {
   
   clearScreen(COLOR_HOT_PINK);
 
-  drawString5x7(20,40, "intense meoww", COLOR_FIREBRICK, COLOR_HOT_PINK);
+  drawString5x7(20, 30, "intense meoww", COLOR_FIREBRICK, COLOR_HOT_PINK);
 
   // Body cat
   fillRectangle(15, 70, 60, 60, COLOR_BLACK);
@@ -52,11 +53,17 @@ void cat_three() {
   // Left eye
   fillRectangle(10, 80, 20, 15, COLOR_GOLD);
 
+  // Left pupil
+  fillRectangle(10, 85, 10, 10, COLOR_BLACK);
+  
   // Right eye
-  fillRectangle(60, 75, 20, 15, COLOR_GOLD);
+  fillRectangle(60, 80, 20, 15, COLOR_GOLD);
 
+  // Right pupil
+  fillRectangle(60, 85, 10, 10, COLOR_BLACK);  
+  
   // Nose
-  fillRectangle(40, 90, 10, 10, COLOR_HOT_PINK);
+  fillRectangle(38, 90, 10, 10, COLOR_HOT_PINK);
 
   // Left cat ear
   drawIsoTriangle(14, 48, 22, 22, COLOR_BLACK);
@@ -65,7 +72,7 @@ void cat_three() {
   drawIsoTriangle(54, 48, 22, 22, COLOR_BLACK);
 
   // Mouth
-  drawDownTriangle(25, 110, 20, COLOR_RED);
+  drawDownTriangle(33, 100, 20, COLOR_RED);
 
 }
 
