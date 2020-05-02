@@ -7,7 +7,6 @@ void cat_two() {
   clearScreen(COLOR_SIENNA);
 
   drawString5x7(20,40, "MEOW meowww", COLOR_GOLD, COLOR_SIENNA);
-  int state = 0;
 
   // Body cat
   fillRectangle(35, 90, 60, 60, COLOR_BROWN);
@@ -39,12 +38,39 @@ void cat_two() {
 
 /* State 3 Cat */
 void cat_three() {
-  clearScreen(COLOR_SIENNA);
-  fillRectangle(60, 110, 10, 10, COLOR_HOT_PINK);
+  clearScreen(COLOR_HOT_PINK);
+
+  drawString5x7(20,40, "intense meoww", COLOR_FIREBRICK, COLOR_HOT_PINK);
+
+  // Body cat
+  fillRectangle(15, 70, 60, 60, COLOR_BLACK);
+
+  // Left eye
+  fillRectangle(10, 80, 20, 15, COLOR_GOLD);
+
+  // Right eye
+  fillRectangle(60, 75, 20, 15, COLOR_GOLD);
+
+  // Nose
+  fillRectangle(40, 90, 10, 10, COLOR_HOT_PINK);
+
+  // Left cat ear
+  drawIsoTriangle(14, 48, 22, 22, COLOR_BLACK);
+
+  // Right cat ear
+  drawIsoTriangle(54, 48, 22, 22, COLOR_BLACK);
+
+  // Mouth
+  drawDownTriangle(25, 110, 20, COLOR_RED);
+
 }
 
 /* State 4 Cat */
 void cat_four() {
-  clearScreen(COLOR_SIENNA);
-  fillRectangle(60, 110, 10, 10, COLOR_HOT_PINK);
+  clearScreen(COLOR_DARK_OLIVE_GREEN);
+
+  drawString5x7(20,10, "M E O W m e o w", COLOR_SKY_BLUE, COLOR_DARK_OLIVE_GREEN);
+
+  
+  fillRectangle(80, 90, 60, 150, COLOR_KHAKI);
 }
